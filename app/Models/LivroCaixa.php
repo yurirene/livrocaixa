@@ -15,12 +15,18 @@ class LivroCaixa extends Model
     const CATEGORIAS = [
         1 => 'Contas',
         2 => 'Lazer',
-        3 => 'Comida'
+        3 => 'Alimentação',
+        4 => 'Acessórios',
+        5 => 'Doações',
+        6 => 'Saúde',
+        7 => 'Estética',
+        8 => 'PET',
+        9 => 'Salário'
     ];
 
-    public function getDataLancamentoAttribute($value)
+    public function getDataLancamentoAttribute()
     {
-        $this->attributes['data_lancamento'] = Carbon::createFromFormat('Y-m-d',$value)->format('d/m/Y');        
+        return Carbon::createFromFormat('Y-m-d H:i:s',$this->created_at)->format('d/m/Y');        
     }
 
 }

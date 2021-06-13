@@ -10,6 +10,13 @@
         @include('alerts')
         <form action="{{route('registro.store')}}" method="post">
             @csrf
+            <div class="form-inline">
+                <input type="radio" class="btn-check" value="Entrada" name="tipo" id="entrada" autocomplete="off" >
+                <label class="btn btn-outline-success" for="entrada">Entrada</label>
+
+                <input type="radio" class="btn-check" value="Saida" name="tipo" id="saida" autocomplete="off" checked>
+                <label class="btn btn-outline-danger" for="saida">Saída</label>
+            </div>
             <div class="form-group">
                 <label>Descrição</label>
                 <input class="form-control" type="text" name="descricao" placeholder="Descrição">

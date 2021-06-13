@@ -3,10 +3,11 @@
 @section('content')
 <div class="card">
     <div class="card-header d-flex justify-content-between">
-        Registro
+        Registros
         <a href="{{route('registro.create')}}" class="btn btn-secondary">Novo</a>
     </div>
     <div class="card-body">
+        @include('alerts')
         <div class="table table-responsive">
             {!! $dataTable->table() !!}                      
         </div>
@@ -15,5 +16,5 @@
 @endsection
 
 @section('script')
-    
+{!! $dataTable->scripts() !!}
 @endsection

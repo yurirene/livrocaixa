@@ -18,6 +18,7 @@ class CreateLivroCaixasTable extends Migration
             $table->string('descricao', 50);
             $table->integer('categoria');
             $table->decimal('valor', 6,2);
+            $table->string('tipo', 10);
             $table->softDeletes();
             $table->timestamps();
         });
